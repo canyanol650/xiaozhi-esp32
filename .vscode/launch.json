@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build v2.4.0_bread-compact-wifi",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"& { if ((git describe --tags --exact-match 2>`$null) -ne 'v2.4.0') { throw 'Please check out tag v2.4.0 before building.' }; . 'D:/esp/v6.0.2/esp-idf/export.ps1'; python scripts/release.py bread-compact-wifi --name bread-compact-wifi; exit `$LASTEXITCODE }\"",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
